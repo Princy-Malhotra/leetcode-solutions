@@ -37,8 +37,8 @@ public:
         
         return mx;
     }
-    
-    int helper2(vector<int>& jd,int d,int n,int idx,int** dp)
+    int dp[301][11];
+    int helper2(vector<int>& jd,int d,int n,int idx)
     {
         if(d==1)
         {
@@ -53,7 +53,7 @@ public:
         for(int i=idx;i<=n-d;i++)
         {
             mx = max(mx,jd[i]);
-            res = min(res,mx+helper2(jd,d-1,n,i+1,dp));
+            res = min(res,mx+helper2(jd,d-1,n,i+1));
         }
         dp[idx][d]=res;
         return res;
@@ -64,16 +64,16 @@ public:
         int n=jd.size();
         if(n<d)
             return -1;
-        int**dp=new int*[n];
-        for(int i=0;i<n;i++)
+        //int**dp=new int*[n];
+        for(int i=0;i<301;i++)
         {
-            dp[i]=new int[d+1];
-            for(int j=0;j<=d;j++)
+            //dp[i]=new int[d+1];
+            for(int j=0;j<=10;j++)
             {
                 dp[i][j]=-1;
             }
         }
-        return helper2(jd,d,n,0,dp);
+        return helper2(jd,d,n,0);
         
         
         /*int* pref=new int[n];
