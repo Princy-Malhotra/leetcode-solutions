@@ -38,7 +38,7 @@ public:
         return mx;
     }
     
-    int helper2(vector<int>&jd,int d,int n,int idx,int** dp)
+    int helper2(vector<int>& jd,int d,int n,int idx,int** dp)
     {
         if(d==1)
         {
