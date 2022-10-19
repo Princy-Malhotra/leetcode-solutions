@@ -65,7 +65,6 @@ public:
                         mp[t->neighbors[i]]=nroot;
                         q.push(t->neighbors[i]);
                     }
-                    
                     mp[t]->neighbors.push_back(mp[t->neighbors[i]]);
                 }
             }
