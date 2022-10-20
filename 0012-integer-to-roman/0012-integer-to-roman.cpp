@@ -6,7 +6,7 @@ public:
         string res;
         for(int i=0;i<13;i++){
             while(num>=normal[i]){
-                res.append(roman[i]);
+                res+=roman[i];
                 num-=normal[i];
             }
         }
