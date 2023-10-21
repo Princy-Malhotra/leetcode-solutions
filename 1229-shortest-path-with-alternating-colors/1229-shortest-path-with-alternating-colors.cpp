@@ -4,9 +4,7 @@ public:
         queue<pair<int,pair<int,char>>>q;
         q.push({src,{0,'b'}});
         q.push({src,{0,'r'}});
-        //vector<pair<int,int>>dist(n,INT_MAX);
         vector<vector<int>>dist(n,vector<int>(2,INT_MAX));          // 0==> blue    1==> red
-        //map<pair<int,char>, int>>dist;
         map<pair<int,char>,int>vis;
         dist[src][0] = 0;
         dist[src][1] = 0;
@@ -28,7 +26,6 @@ public:
                         char ch = (x.second=='r')?'b':'r';
                         int chin = (ch=='b')?0:1;
                         if(dist[x.first][chin]>t.second.first+1){
-                        //if(!vis[{x.first,{t.second.first+1,ch}}])
                         q.push({x.first,{t.second.first+1,ch}});
                         dist[x.first][chin] = t.second.first+1;
                         }
